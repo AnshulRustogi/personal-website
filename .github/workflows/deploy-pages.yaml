@@ -61,6 +61,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-output
+      
+      # Step 8: Debug the downloaded artifact
+      - name: Debug downloaded artifact
+        run: ls -la
 
       # Step 9: Extract the artifact
       - name: Extract artifact
