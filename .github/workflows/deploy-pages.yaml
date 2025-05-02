@@ -39,8 +39,9 @@ jobs:
 
       # Step 6: Upload build output as an artifact
       - name: Upload build output
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
+          name: build-output
           path: ./build
 
   # Deploy job
