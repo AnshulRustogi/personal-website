@@ -39,7 +39,7 @@ jobs:
 
       # Step 6: Debug the build directory
       - name: Debug build directory
-        run: ls -la ./build
+        run: ls -R ./build
 
       # Step 7: Upload build output as an artifact
       - name: Upload build output
@@ -61,6 +61,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-output
-      
+
+      # Step 9: Deploy using Jekyll Build Pages
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/jekyll-build-pages@v1
