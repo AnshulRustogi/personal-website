@@ -62,6 +62,14 @@ jobs:
         with:
           name: build-output
 
-      # Step 9: Deploy using Jekyll Build Pages
+      # Step 9: Build using Jekyll
       - name: Deploy to GitHub Pages
         uses: actions/jekyll-build-pages@v1
+
+      # Step 10: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Use the GitHub token for authentication
+          publish_branch: gh-pages # Specify the branch to deploy to
+          custom_domain: ${{ secrets.CUSTOM_DOMAIN }} # Use the custom domain from secrets
