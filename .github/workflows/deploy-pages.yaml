@@ -1,9 +1,10 @@
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on creation of tag
   push:
-    branches: ["main"]
+    tags:
+      - 'v*.*.*' # Matches version tags like v1.0.0
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
