@@ -57,6 +57,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-output
+      # Print the contents of the artifact for debugging
+      - name: List artifact contents
+        run: ls -R ./build
 
       # Step 8: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
