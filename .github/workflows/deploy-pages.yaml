@@ -62,18 +62,5 @@ jobs:
         with:
           name: build-output
       
-      # Step 8: Debug the downloaded artifact
-      - name: Debug downloaded artifact
-        run: ls -la
-
-      # Step 9: Extract the artifact
-      - name: Extract artifact
-        run: mkdir -p ./build && mv build-output/* ./build
-
-      # Step 10: Debug the extracted build directory
-      - name: Debug extracted build directory
-        run: ls -R ./build
-
-      # Step 11: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
