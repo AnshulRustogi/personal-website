@@ -37,7 +37,11 @@ jobs:
       - name: Add CNAME file
         run: echo "${{ secrets.CUSTOM_DOMAIN }}" > build/CNAME
 
-      # Step 6: Upload build output as an artifact
+      # Step 6: Debug the build directory
+      - name: Debug build directory
+        run: ls -la ./build
+
+      # Step 7: Upload build output as an artifact
       - name: Upload build output
         uses: actions/upload-artifact@v4
         with:
@@ -52,15 +56,20 @@ jobs:
       id-token: write
 
     steps:
-      # Step 7: Download the artifact
+      # Step 8: Download the artifact
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
           name: build-output
-      # Print the contents of the artifact for debugging
-      - name: List artifact contents
+
+      # Step 9: Extract the artifact
+      - name: Extract artifact
+        run: mkdir -p ./build && mv build-output/* ./build
+
+      # Step 10: Debug the extracted build directory
+      - name: Debug extracted build directory
         run: ls -R ./build
 
-      # Step 8: Deploy to GitHub Pages
+      # Step 11: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
