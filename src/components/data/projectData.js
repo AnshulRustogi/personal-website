@@ -1,18 +1,27 @@
 const project = [
     {
-        title: "Project One",
-        description: "A web application that does amazing things.",
-        link: "https://example.com/project-one",
+        title: "StayFit",
+        description: "Devised a cross-platform app for guiding users through dedicated workout videos for different exercises using Flutter.",
+        link: "https://example.com/stayfit",
+        technologies: ["Flutter", "Cross-Platform", "Mobile Development"],
     },
     {
-        title: "Project Two",
-        description: "An innovative solution for modern problems.",
-        link: "https://example.com/project-two",
+        title: "Sokoban Solver",
+        description: "Developed a Sokoban puzzle-solver by implementing various search algorithms, including A*, BFS, DFS, and more. Optimized path-finding efficacy using heuristics like Manhattan and Euclidean distances.",
+        link: "https://example.com/sokoban-solver",
+        technologies: ["Python", "Algorithms", "AI"],
     },
     {
-        title: "Project Three",
-        description: "A mobile app that simplifies your life.",
-        link: "https://example.com/project-three",
+        title: "ML-GYM",
+        description: "Developed an intelligent agent to count the frequency of push-ups/sit-ups with correct posture in real-time using OpenCV, OpenPose, and Flask.",
+        link: "https://example.com/ml-gym",
+        technologies: ["Python", "OpenCV", "Flask"],
+    },
+    {
+        title: "Cowin Vaccine Appointment Finder",
+        description: "Engineered a web app to check real-time vaccine appointment availability using Flask, jQuery, and AJAX.",
+        link: "https://example.com/cowin-finder",
+        technologies: ["Flask", "jQuery", "AJAX"],
     },
 ];
 

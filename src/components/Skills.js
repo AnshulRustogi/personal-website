@@ -14,26 +14,27 @@ const Skills = () => {
     return (
         <section className="bg-white dark:bg-black text-black dark:text-white py-16">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <h2 className="text-3xl font-bold mb-4 text-center">Core Skills</h2>
+                <div className="w-16 h-1 bg-blue-500 mx-auto mb-8"></div>
+                <div className="flex flex-wrap justify-center gap-4">
                     {skills.map((skill, index) => (
                         <div
                             key={index}
-                            className="flex items-center justify-center p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md
+                            className="flex items-center space-x-2 px-6 py-3 bg-gray-200 dark:bg-gray-800 rounded-full shadow-md
                             transition-transform transform hover:scale-105"
                         >
                             <img
                                 src={skill.icon}
                                 alt={skill.name}
-                                className="w-8 h-8 mr-2"
+                                className="w-6 h-6"
                             />
-                            <span className="text-lg font-semibold">{skill.name}</span>
+                            <span className="text-sm font-medium">{skill.name}</span>
                         </div>
                     ))}
                 </div>
             </div>
         </section>
     );
-}
+};
 
 export default Skills;

@@ -1,34 +1,28 @@
 const experiences = [
     {
-        title: "Software Engineer",
-        company: "Tech Company",
-        date: "June 2020 - Present",
-        description: "Developing and maintaining web applications using React and Node.js.Developing and maintaining web applications using React and Node.js.Developing and maintaining web applications using React and Node.js.Developing and maintaining web applications using React and Node.js.Developing and maintaining web applications using React and Node.js.Developing and maintaining web applications using React and Node.js.Developing and maintaining web applications using React and Node.js.Developing and maintaining web applications using React and Node.js.Developing and maintaining web applications using React and Node.js."
+        title: "Software Engineering Analyst",
+        company: "Goldman Sachs",
+        date: "July 2024 - Current",
+        description: "Collaborated with the team to design and develop a billing engine using AWS Lambda Functions, Step Functions, and S3. Revamped the core calculator codebase, reducing its size by 19.4% and improving maintainability.",
     },
     {
-        title: "Intern",
-        company: "Another Tech Company",
-        date: "Jan 2020 - May 2020",
-        description: "Assisted in the development of internal tools and applications."
+        title: "Seasonal Analyst",
+        company: "Goldman Sachs",
+        date: "January 2024 - June 2024",
+        description: "Engineered RESTful APIs using Java Spring Boot for automating financial document generation, saving 300+ man-hours yearly. Refactored legacy code by upgrading critical internal packages to improve performance.",
     },
     {
-        title: "Freelancer",
-        company: "Self-Employed",
-        date: "Jan 2019 - Dec 2019",
-        description: "Worked on various projects including websites and mobile applications."
+        title: "Summer Analyst",
+        company: "Goldman Sachs",
+        date: "May 2023 - July 2023",
+        description: "Revamped AWS Step Functions by integrating new Lambda Functions, enabling automated generation of 2000+ financial workbooks yearly. Leveraged Spring Boot and Terraform for deployment.",
     },
     {
-        title: "Intern",
-        company: "Startup Company",
-        date: "June 2018 - Dec 2018",
-        description: "Gained experience in software development and project management."
+        title: "Teaching Assistant",
+        company: "Shiv Nadar University",
+        date: "Monsoon 2022 - Spring 2023",
+        description: "Assisted in preparing course materials, grading tests, and designing coding questions for Data Structures. Observed 140+ student performances and maintained academic records.",
     },
-    {
-        title: "Volunteer Developer",
-        company: "Non-Profit Organization",
-        date: "Jan 2018 - May 2018",
-        description: "Contributed to open-source projects and community initiatives."
-    }
 ];
 
 export default experiences;
