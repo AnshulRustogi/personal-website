@@ -48,7 +48,7 @@ jobs:
           name: build-output
           path: ./build
 
-  deploy:
+  build-with-jekyll:
     needs: build-and-deploy
     runs-on: ubuntu-latest
     permissions:
@@ -65,11 +65,20 @@ jobs:
       # Step 9: Build using Jekyll
       - name: Deploy to GitHub Pages
         uses: actions/jekyll-build-pages@v1
+        # Export generated files to artifact with the name 'github-pages'
+        with:
+          artifact_name: github-pages
 
-      # Step 10: Deploy to GitHub Pages
+  deploy:
+    needs: build-with-jekyll
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      # Step 10: Download the artifact from the previous job
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Use the GitHub token for authentication
-          publish_branch: gh-pages # Specify the branch to deploy to
-          custom_domain: ${{ secrets.CUSTOM_DOMAIN }} # Use the custom domain from secrets
+          artifact_name: github-pages
