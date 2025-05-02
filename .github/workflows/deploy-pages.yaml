@@ -33,7 +33,7 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      # Step 5: Add CNAME file for custom domain
+      # Step 5: Navigate to the build directory and add CNAME file
       - name: Add CNAME file
         run: echo "${{ secrets.CUSTOM_DOMAIN }}" > build/CNAME
 
