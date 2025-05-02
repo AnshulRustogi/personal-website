@@ -33,15 +33,25 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      # Step 5: Add CNAME file for custom domain from environment variable
+      # Step 5: Add CNAME file for custom domain
       - name: Add CNAME file
-        run: |
-          echo "${{ secrets.CUSTOM_DOMAIN }}" > build/CNAME
-        env:
-          CUSTOM_DOMAIN: ${{ secrets.CUSTOM_DOMAIN }}
+        run: echo "${{ secrets.CUSTOM_DOMAIN }}" > build/CNAME
 
-      # Step 6: Upload the build output to GitHub Pages
+      # Step 6: Upload build output as an artifact
+      - name: Upload build output
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./build
+
+  # Deploy job
+  deploy:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
-        with:
-          publish_dir: ./build
