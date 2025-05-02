@@ -37,32 +37,28 @@ jobs:
 
       # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       # Step 4: Build the project
       - name: Build the project
         run: npm run build
 
-      # Step 5: Debug the build directory
-      - name: Debug build directory
-        run: ls -R ./build
-
-      # Step 6: Add CNAME file
+      # Step 5: Add CNAME file
       - name: Add CNAME file
         run: echo "${{ secrets.CUSTOM_DOMAIN }}" > ./build/CNAME
 
-      # Step 7: Configure Pages
+      # Step 6: Configure Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Step 8: Build with Jekyll
+      # Step 7: Build with Jekyll
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./build
           destination: ./_site
 
-      # Step 9: Upload artifact
+      # Step 8: Upload artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
