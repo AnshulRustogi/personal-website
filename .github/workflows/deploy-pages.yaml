@@ -1,14 +1,24 @@
-name: Deploy to GitHub Pages
+name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
+  # Runs on pushes targeting the default branch
   push:
-    branches:
-      - main # Trigger the workflow when changes are pushed to the main branch
+    branches: ["main"]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
@@ -17,7 +27,7 @@ jobs:
     steps:
       # Step 1: Checkout the repository
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Step 2: Set up Node.js
       - name: Set up Node.js
@@ -33,57 +43,30 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      # Step 5: Navigate to the build directory and add CNAME file
-      - name: Add CNAME file
-        run: echo "${{ secrets.CUSTOM_DOMAIN }}" > build/CNAME
-
-      # Step 6: Debug the build directory
+      # Step 5: Debug the build directory
       - name: Debug build directory
         run: ls -R ./build
 
-      # Step 7: Upload build output as an artifact
-      - name: Upload build output
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-output
-          path: ./build
+      # Step 6: Add CNAME file
+      - name: Add CNAME file
+        run: echo "${{ secrets.CUSTOM_DOMAIN }}" > ./build/CNAME
 
-  build-with-jekyll:
-    needs: build-and-deploy
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
+      # Step 7: Configure Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-    steps:
-      # Step 8: Download the artifact
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: build-output
-
-      # Step 9: Build using Jekyll
-      - name: Deploy to GitHub Pages
+      # Step 8: Build with Jekyll
+      - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
-      
-      # Step 10: Upload the Jekyll build output as an artifact
-      - name: Upload Jekyll build output
-        uses: actions/upload-artifact@v4
         with:
-          name: github-pages
-          path: ./_site
-          retention-days: 1
+          source: ./build
+          destination: ./_site
 
-  deploy:
-    needs: build-with-jekyll
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
+      # Step 9: Upload artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
 
-    steps:
-      # Step 10: Download the artifact from the previous job
+      # Step 10: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: github-pages
