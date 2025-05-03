@@ -64,7 +64,7 @@ export default function AboutMe() {
                         <img
                             src="https://placehold.co/600x600/EEE/31343C"
                             alt="Anshul Rustogi"
-                            className="rounded-full w-48 h-48 object-cover border-4 border-gray-300 dark:border-gray-700"
+                            className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-gray-300 dark:border-gray-700"
                         />
                     </div>
                 </div>
