@@ -28,12 +28,12 @@ export default function AboutMe() {
     }, [text, fullText]);
 
     return (
-        <section className="bg-white dark:bg-black text-black dark:text-white py-16">
+        <section id="about-me" className="bg-white dark:bg-black text-black dark:text-white py-16 pt-20 md:pt-24">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-center">
                     {/* About Text */}
                     <div className="md:w-1/2 md:pr-8">
-                        <h2 className="text-3xl font-bold mb-4 text-red-600 dark:text-red-400">
+                        <h2 className="text-3xl font-bold mb-4 text-green-400 ">
                             {text}
                             <span
                                 className={`${

@@ -25,10 +25,10 @@ const Experience = () => {
     };
 
     return (
-        <section className="bg-white dark:bg-black text-black dark:text-white py-16">
+        <section id="experience" className="bg-white dark:bg-black text-black dark:text-white py-16 pt-20 md:pt-24">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
-                <div className="w-16 h-1 bg-blue-500 mx-auto mb-8"></div>
+                <div className="w-16 h-1 bg-green-400 mx-auto mb-8"></div>
                 <div className="relative">
                     {/* Timeline line */}
                     <div

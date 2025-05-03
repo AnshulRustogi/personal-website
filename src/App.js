@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import AboutMe from './components/AboutMe';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div className={`${theme} transition duration-500 ease-in-out`}>
       <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
-      <Header toggleTheme={toggleTheme} />
+      <Navbar toggleTheme={toggleTheme} />
         <main className="container mx-auto p-4">
           <AboutMe />
           <Experience />
