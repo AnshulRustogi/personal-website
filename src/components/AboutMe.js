@@ -28,12 +28,15 @@ export default function AboutMe() {
     }, [text, fullText]);
 
     return (
-        <section id="about-me" className="bg-white dark:bg-black text-black dark:text-white py-16 pt-20 md:pt-24">
+        <section
+            id="about-me"
+            className="bg-white dark:bg-black text-black dark:text-white h-screen flex justify-center items-center"
+        >
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-center">
                     {/* About Text */}
                     <div className="md:w-1/2 md:pr-8">
-                        <h2 className="text-3xl font-bold mb-4 text-green-400 ">
+                        <h2 className="text-3xl font-bold mb-4 text-green-400">
                             {text}
                             <span
                                 className={`${
@@ -43,9 +46,17 @@ export default function AboutMe() {
                                 |
                             </span>
                         </h2>
-                        <p className="text-gray-700 dark:text-gray-300">
+                        <p className="text-gray-700 dark:text-gray-300 mb-6">
                             I am a passionate software engineer with a strong background in web development and a keen interest in machine learning. I enjoy solving complex problems and building efficient, scalable applications. My goal is to leverage technology to create innovative solutions that make a positive impact on people's lives.
                         </p>
+                        {/* Download Resume Button */}
+                        <a
+                            href="/path-to-resume.pdf"
+                            download="Anshul_Rustogi_Resume.pdf"
+                            className="inline-block bg-black text-white font-medium py-2 px-4 rounded hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition"
+                        >
+                            Download Resume
+                        </a>
                     </div>
 
                     {/* Profile Image */}
