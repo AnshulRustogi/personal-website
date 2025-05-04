@@ -1,12 +1,3 @@
-/* 
-Create a beautiful and creative contact me section for the portfolio website using React and Tailwind CSS.
-Add the following features:
-1. A title "Contact Me".
-2. Email and linkedIn links.
-3. A responsive design that looks good on both desktop and mobile devices.
-4. Use Tailwind CSS for styling and animations.
-*/
-
 import React from 'react';
 
 const Contact = () => {

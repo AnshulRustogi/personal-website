@@ -1,12 +1,3 @@
-/* 
-Create a buitiful and creative skills section for the portfolio website using React and Tailwind CSS.
-The skills section should include the following features:
-1. A title "Skills".
-2. A list of skills with icons.
-4. A responsive design that looks good on both desktop and mobile devices.
-5. Use Tailwind CSS for styling and animations.
-*/
-
 import React from 'react';
 import skills from './data/skillData';
 

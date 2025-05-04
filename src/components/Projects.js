@@ -1,12 +1,3 @@
-/* 
-Create a beautiful and creative project section for the portfolio website using React and Tailwind CSS.
-The project section should include the following features:
-1. A title "Projects".
-2. A list of projects with descriptions and links.
-3. A responsive design that looks good on both desktop and mobile devices.
-4. Use Tailwind CSS for styling and animations.
-*/
-
 import React from 'react';
 import project from './data/projectData';
 
