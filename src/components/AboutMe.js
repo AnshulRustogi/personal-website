@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import aboutMeConfig from './data/aboutMe';
 
 export default function AboutMe() {
     const [text, setText] = useState(""); // State to hold the typed text
-    const fullText = "Anshul Rustogi"; // Full text to type
     const [isBlinking, setIsBlinking] = useState(true); // State for blinking cursor
 
     useEffect(() => {
@@ -10,9 +10,9 @@ export default function AboutMe() {
         let blinkingTimeout;
 
         // Typing effect
-        if (text.length < fullText.length) {
+        if (text.length < aboutMeConfig.name.length) {
             typingTimeout = setTimeout(() => {
-                setText(fullText.slice(0, text.length + 1));
+                setText(aboutMeConfig.name.slice(0, text.length + 1));
             }, 150); // Typing speed
         } else {
             // Start blinking cursor after typing is complete
@@ -25,7 +25,7 @@ export default function AboutMe() {
             clearTimeout(typingTimeout);
             clearInterval(blinkingTimeout);
         };
-    }, [text, fullText]);
+    }, [text]);
 
     return (
         <section
@@ -47,11 +47,11 @@ export default function AboutMe() {
                             </span>
                         </h2>
                         <p className="text-gray-700 dark:text-gray-300 mb-6">
-                            I am a passionate software engineer with a strong background in web development and a keen interest in machine learning. I enjoy solving complex problems and building efficient, scalable applications. My goal is to leverage technology to create innovative solutions that make a positive impact on people's lives.
+                            {aboutMeConfig.description}
                         </p>
                         {/* Download Resume Button */}
                         <a
-                            href="/path-to-resume.pdf"
+                            href={aboutMeConfig.resumeLink}
                             download="Anshul_Rustogi_Resume.pdf"
                             className="inline-block bg-black text-white font-medium py-2 px-4 rounded hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition"
                         >
@@ -62,8 +62,8 @@ export default function AboutMe() {
                     {/* Profile Image */}
                     <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
                         <img
-                            src="https://placehold.co/600x600/EEE/31343C"
-                            alt="Anshul Rustogi"
+                            src={aboutMeConfig.image}
+                            alt={aboutMeConfig.name}
                             className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-gray-300 dark:border-gray-700"
                         />
                     </div>
