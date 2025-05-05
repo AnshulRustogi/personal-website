@@ -8,6 +8,9 @@ module.exports = {
         secondary: '#edf2f7', // Light text
         accent: '#4a5568', // Accent color
       },
+      fontFamily: {
+        sans: ['Courier New', 'monospace'], // Set monospace as the default font
+      },
     },
   },
   variants: {

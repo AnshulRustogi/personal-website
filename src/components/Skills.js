@@ -12,13 +12,15 @@ const Skills = () => {
                         <div
                             key={index}
                             className="flex items-center space-x-2 px-6 py-3 bg-gray-200 dark:bg-gray-800 rounded-full shadow-md
-                            transition-transform transform hover:scale-105"
+                            transition-transform transform hover:scale-105 cursor-pointer"
                         >
-                            <img
-                                src={skill.icon}
-                                alt={skill.name}
-                                className="w-6 h-6"
-                            />
+                            {skill.icon && (
+                                <img
+                                    src={skill.icon}
+                                    alt={skill.name}
+                                    className="w-6 h-6"
+                                />
+                            )}
                             <span className="text-sm font-medium">{skill.name}</span>
                         </div>
                     ))}

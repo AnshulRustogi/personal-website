@@ -9,7 +9,6 @@ import { useTheme } from './utils/themeToggle';
 
 const App = () => {
   useEffect(() => {
-    // Scroll to #about-me on load without modifying the URL
     const aboutMeSection = document.getElementById("about-me");
     if (aboutMeSection) {
       aboutMeSection.scrollIntoView({ behavior: "smooth" });

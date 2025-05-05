@@ -30,13 +30,13 @@ export default function AboutMe() {
     return (
         <section
             id="about-me"
-            className="bg-white dark:bg-black text-black dark:text-white h-screen flex justify-center items-center"
+            className="bg-white dark:bg-black text-black dark:text-white h-screen flex justify-center items-center pt-32 md:pt-0"
         >
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-center">
                     {/* About Text */}
                     <div className="md:w-1/2 md:pr-8">
-                        <h2 className="text-3xl font-bold mb-4 text-green-400">
+                        <h2 className="text-4xl font-extrabold mb-6 text-green-400">
                             {text}
                             <span
                                 className={`${
@@ -46,14 +46,14 @@ export default function AboutMe() {
                                 |
                             </span>
                         </h2>
-                        <p className="text-gray-700 dark:text-gray-300 mb-6">
+                        <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
                             {aboutMeConfig.description}
                         </p>
                         {/* Download Resume Button */}
                         <a
                             href={aboutMeConfig.resumeLink}
                             download="Anshul_Rustogi_Resume.pdf"
-                            className="inline-block bg-black text-white font-medium py-2 px-4 rounded hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition"
+                            className="inline-block bg-green-500 text-white font-medium py-3 px-6 rounded-lg hover:bg-green-600 transition"
                         >
                             Download Resume
                         </a>
