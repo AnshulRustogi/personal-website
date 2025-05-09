@@ -11,7 +11,7 @@ const experiences = [
         company: "Goldman Sachs",
         date: "July 2024 - February 2025",
         description: "Goldman Sachs ETF Accelerator",
-        technologies: ["Java", "Spring Boot", "AWS", "Terraform"]
+        technologies: ["Java", "Spring Boot", "AWS", "Terraform", "Containerization", "CI/CD"]
     },
     {
         title: "Seasonal Analyst",
