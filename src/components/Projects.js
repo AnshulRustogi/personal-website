@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import project from './data/projectData';
 
 const Projects = () => {
@@ -18,7 +18,7 @@ const Projects = () => {
 };
 
 const ProjectCard = ({ proj }) => {
-    const [showDescription, setShowDescription] = useState(false);
+    // const [showDescription, setShowDescription] = useState(false);
 
     return (
         <div className="flex flex-col md:flex-row items-center bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden lg:p-4">
@@ -38,17 +38,6 @@ const ProjectCard = ({ proj }) => {
             {/* Project Details */}
             <div className="w-full md:w-2/3 p-6 lg:p-4">
                 <h3 className="text-2xl font-semibold mb-2">{proj.title}</h3>
-                {/* <button
-                    onClick={() => setShowDescription(!showDescription)}
-                    className="text-sm text-green-500 hover:underline mb-4"
-                >
-                    {showDescription ? "Hide Details" : "Show Details"}
-                </button>
-                {showDescription && (
-                    <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 mb-4 font-sans">
-                        {proj.description}
-                    </p>
-                )} */}
                 <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 mb-4 font-sans">
                         {proj.description}
                 </p>
