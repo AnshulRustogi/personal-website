@@ -100,7 +100,7 @@ const Navbar = ({ toggleTheme }) => {
                                     🌑
                                 </span>
                             ) : (
-                                <span className="flex justify-center items-center h-full w-full  text-white">
+                                <span className="flex justify-center items-center h-full w-full  text-black">
                                     ☀
                                 </span>
                             )}
@@ -187,7 +187,7 @@ const Navbar = ({ toggleTheme }) => {
                                     🌑
                                 </span>
                             ) : (
-                                <span className="flex justify-center items-center h-full w-full">
+                                <span className="flex justify-center items-center h-full w-full text-black">
                                     ☀
                                 </span>
                             )}

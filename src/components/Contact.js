@@ -22,6 +22,14 @@ const Contact = () => {
                     >
                         LinkedIn Profile
                     </a>
+                    <a
+                        href="https://github.com/AnshulRustogi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:text-green-400 font-bold mt-2"
+                    >
+                        GitHub Profile
+                    </a>
                 </div>
                 <div className="mt-8">
                     {/* <p className="text-center text-gray-400">© 2023 Anshul Rustogi. All rights reserved.</p> */}

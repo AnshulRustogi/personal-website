@@ -1,27 +1,31 @@
 const project = [
     {
         title: "StayFit",
-        description: "Devised a cross-platform app for guiding users through dedicated workout videos for different exercises using Flutter.",
-        link: "https://example.com/stayfit",
-        technologies: ["Flutter", "Cross-Platform", "Mobile Development"],
+        description: "StayFit is a mobile-application built using Flutter & Dart language. The app supports user authentication and displays workout along with instructional videos.",
+        link: "https://github.com/AnshulRustogi/StayFit",
+        technologies: ["Flutter", "Dart", "Authentication", "Firebase", "Cross-Platform", "Mobile Development"],
+        image: "/images/projects_icon/StayFit.png",
     },
     {
         title: "Sokoban Solver",
         description: "Developed a Sokoban puzzle-solver by implementing various search algorithms, including A*, BFS, DFS, and more. Optimized path-finding efficacy using heuristics like Manhattan and Euclidean distances.",
-        link: "https://example.com/sokoban-solver",
-        technologies: ["Python", "Algorithms", "AI"],
+        link: "https://github.com/AnshulRustogi/Sokoban-ai-project",
+        technologies: ["Python", "Algorithms", "AI", "Heuristics"],
+        image: "/images/projects_icon/Sokoban.gif",
     },
     {
         title: "ML-GYM",
-        description: "Developed an intelligent agent to count the frequency of push-ups/sit-ups with correct posture in real-time using OpenCV, OpenPose, and Flask.",
-        link: "https://example.com/ml-gym",
+        description: "ML-Gym is an AI automated gym built using python and openCV. The app can estimate the number of pushup and squats done by the user in realtime.",
+        link: "https://github.com/AnshulRustogi/ML-Gym",
         technologies: ["Python", "OpenCV", "Flask"],
+        image: "/images/projects_icon/MlGym.png",
     },
     {
         title: "Cowin Vaccine Appointment Finder",
         description: "Engineered a web app to check real-time vaccine appointment availability using Flask, jQuery, and AJAX.",
-        link: "https://example.com/cowin-finder",
-        technologies: ["Flask", "jQuery", "AJAX"],
+        link: "https://github.com/AnshulRustogi/Cowin-Vaccine-Appointment-Finder",
+        technologies: ["Python", "Flask", "jQuery", "AJAX"],
+        image: "/images/projects_icon/CowinApt.png",
     },
 ];
 
