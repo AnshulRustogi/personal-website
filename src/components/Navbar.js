@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar = ({ toggleTheme }) => {
+const Navbar = ({ toggleTheme, theme }) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle the menu
 
     useEffect(() => {
-        const currentTheme = localStorage.getItem('theme') || 'dark';
+        const currentTheme = theme;
         setIsDarkMode(currentTheme === 'dark');
         document.documentElement.setAttribute('data-theme', currentTheme);
-    }, []);
+    }, [theme]);
 
     const handleToggleTheme = () => {
         const newTheme = isDarkMode ? 'light' : 'dark';

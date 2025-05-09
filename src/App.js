@@ -20,7 +20,9 @@ const App = () => {
   return (
     <div className={`${theme} transition duration-500 ease-in-out`}>
       <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
-        <Navbar toggleTheme={toggleTheme} />
+        {/* <Navbar toggleTheme={toggleTheme, theme} /> */}
+        {/* Pass both toggleTheme and theme */}
+        <Navbar toggleTheme={toggleTheme} theme={theme} />
         <main className="container mx-auto p-4">
           <AboutMe />
           <Experience />
