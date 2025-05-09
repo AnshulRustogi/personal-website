@@ -70,21 +70,31 @@ const Experience = () => {
                                 }`}
                             >
                                 <div className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg p-6 shadow-md">
-                                    <h3 className="text-xl font-semibold">{exp.title} at {exp.company}</h3>
+                                    <h2 className="text-xl font-semibold">{exp.title} | {exp.company}</h2>
                                     <p className="text-gray-500 dark:text-gray-400 text-sm">{exp.date}</p>
-                                    <p className="mt-2 text-gray-700 dark:text-gray-300">
-                                        {!expandedDescriptions[index]
-                                            ? `${exp.description.slice(0, 150)}...`
-                                            : exp.description}
-                                        {exp.description.length > 150 && (
-                                            <button
-                                                className="text-blue-500 dark:text-blue-400 ml-2"
-                                                onClick={() => toggleDescription(index)}
-                                            >
-                                                {expandedDescriptions[index] ? "Show Less" : "Read More"}
-                                            </button>
-                                        )}
-                                    </p>
+                                    {exp.description && 
+                                        <p>
+                                            {!expandedDescriptions[index]
+                                                ? exp.description.length > 150
+                                                    ? `${exp.description.slice(0, 150)}...`
+                                                    : <span><strong>Team:</strong> {exp.description}</span>
+                                                : exp.description}
+                                            {exp.description.length > 150 && (
+                                                <button
+                                                    className="text-blue-500 dark:text-blue-400 ml-2"
+                                                    onClick={() => toggleDescription(index)}
+                                                >
+                                                    {expandedDescriptions[index] ? "Show Less" : "Read More"}
+                                                </button>
+                                            )}
+                                        </p>
+                                    }
+                                    {/* Show technologies used in a single line */}
+                                    {exp.technologies && exp.technologies.length > 0 && (
+                                        <p>
+                                            <strong>Technologies:</strong> {exp.technologies.join(', ')}
+                                        </p>
+                                    )}
                                 </div>
                             </div>
                         </div>

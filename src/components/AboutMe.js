@@ -50,13 +50,15 @@ export default function AboutMe() {
                             {aboutMeConfig.description}
                         </p>
                         {/* Download Resume Button */}
-                        <a
-                            href={aboutMeConfig.resumeLink}
-                            download="Anshul_Rustogi_Resume.pdf"
-                            className="inline-block bg-green-500 text-white font-medium py-3 px-6 rounded-lg hover:bg-green-600 transition"
-                        >
-                            Download Resume
-                        </a>
+                        {aboutMeConfig.resumeLink && (
+                            <a
+                                href={aboutMeConfig.resumeLink}
+                                download="Anshul_Rustogi_Resume.pdf"
+                                className="inline-block bg-green-500 text-white font-medium py-3 px-6 rounded-lg hover:bg-green-600 transition"
+                            >
+                                Download Resume
+                            </a>
+                        )}
                     </div>
 
                     {/* Profile Image */}

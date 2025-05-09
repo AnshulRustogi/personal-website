@@ -32,8 +32,6 @@ const Contact = () => {
                     </a>
                 </div>
                 <div className="mt-8">
-                    {/* <p className="text-center text-gray-400">© 2023 Anshul Rustogi. All rights reserved.</p> */}
-                    {/* Get year from current date */}
                     <p className="text-center text-gray-400">
                         © {new Date().getFullYear()} Anshul Rustogi. All rights reserved.
                     </p>
