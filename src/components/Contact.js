@@ -9,13 +9,13 @@ const Contact = () => {
                 <div className="flex flex-col items-center">
                     <p className="mb-4">Feel free to reach out to me via email or LinkedIn!</p>
                     <a
-                        href="mailto:example@example.com"
+                        href="mailto:forte.meadows31@icloud.com"
                         className="text-blue-500 hover:text-green-400 font-bold mb-2"
                     >
                         Email Me
                     </a>
                     <a
-                        href="https://www.linkedin.com/in/example"
+                        href="www.linkedin.com/in/anshul-rustogi"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-500 hover:text-green-400 font-bold"
